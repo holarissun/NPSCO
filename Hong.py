@@ -264,12 +264,12 @@ num_actions = env.action_space.shape[0]
 for i in range(10):
     try:
         policy_net = ActorCritic_PPO(num_inputs, num_actions, layer_norm=True).to(device)
-        policy_net.load_state_dict(torch.load(ENV_NAME.split('-')[0] + '/CheckPoints/checkpoint_{0}hidden_{1}drop_prob_{2}repeat'.format(config.hid_num, config.drop_prob, i)))
+        policy_net.load_state_dict(torch.load(ENV_NAME.split('-')[0] + '/CheckPoints/checkpoint_large_{0}hidden_{1}drop_prob_{2}repeat'.format(config.hid_num, config.drop_prob, i)))
         load_list.append('checkpoint_{0}hidden_{1}drop_prob_{2}repeat'.format(config.hid_num, config.drop_prob, i))
         policy_buffer[str(i)] = policy_net.eval()
     except:
         policy_net = ActorCritic_PPO(num_inputs, num_actions, layer_norm=True).to(device)
-        policy_net.load_state_dict(torch.load(ENV_NAME.split('-')[0] + '/CheckPoints/checkpoint_{0}hidden_{1}drop_prob_{2}repeat'.format(config.hid_num, config.drop_prob, i)))
+        policy_net.load_state_dict(torch.load(ENV_NAME.split('-')[0] + '/CheckPoints/checkpoint_large_{0}hidden_{1}drop_prob_{2}repeat'.format(config.hid_num, config.drop_prob, i)))
         load_list.append('checkpoint_{0}hidden_{1}drop_prob_{2}repeat'.format(config.hid_num, config.drop_prob, i))
         policy_buffer[str(i)] = policy_net.eval()
         pass
