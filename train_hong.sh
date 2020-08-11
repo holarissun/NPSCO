@@ -7,4 +7,4 @@ nohup python Hong.py \
   --use_gpu 6 \
   --thres 0.0 \
   --file_num Hong \
-  > $1.log 2>&1 &
+  >$1.log 2>&1 &

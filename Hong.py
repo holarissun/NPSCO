@@ -276,9 +276,9 @@ for i in range(10):
 fn_list = []
 for i in range(10):
     try:
-        fn_list.append(np.loadtxt(ENV_NAME.split('-')[0] + '/Rwds/rwds_{0}hidden_{1}drop_prob_{2}repeat'.format(config.hid_num, config.drop_prob, i)))
-    except:
-        print('wrong in ', i)
+        fn_list.append(np.loadtxt(ENV_NAME.split('-')[0] + '/Rwds/rwds_large_{0}hidden_{1}drop_prob_{2}repeat'.format(config.hid_num, config.drop_prob, i)))
+    except Exception as e:
+        print('wrong in ', i, " Error: ", e)
 final_100_reward = []
 for i in range(len(fn_list)):
     final_100_reward.append(np.mean(fn_list[i][-100:]))
