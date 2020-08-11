@@ -35,21 +35,21 @@ parser.add_argument(
     type=int,
     default=0,
     help='number of training episodes')
-parser.add_argument(
-    '--num_repeat',
-    type=int,
-    default=10,
-    help='repeat the experiment for several times')
+# parser.add_argument(
+#     '--num_repeat',
+#     type=int,
+#     default=10,
+#     help='repeat the experiment for several times')
 parser.add_argument(
     '--use_gpu',
     type=int,
     default=0,
     help='if use gpu')
-parser.add_argument(
-    '--start_T',
-    type=int,
-    default=20,
-    help='start to calculate novelty')
+# parser.add_argument(
+#     '--start_T',
+#     type=int,
+#     default=20,
+#     help='start to calculate novelty')
 parser.add_argument(
     '--thres',
     type=float,
@@ -60,11 +60,11 @@ parser.add_argument(
     type=str,
     default=None,
     help='threshold of novelty')
-parser.add_argument(
-    '--weight',
-    type=float,
-    default=0,
-    help='novelty reward weight')
+# parser.add_argument(
+#     '--weight',
+#     type=float,
+#     default=0,
+#     help='novelty reward weight')
 
 config = parser.parse_args()
 ENV_NAME = config.env_name
