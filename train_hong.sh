@@ -7,5 +7,4 @@ nohup python Hong.py \
   --use_gpu 6 \
   --thres 0.0 \
   --file_num Hong \
-  --num_repeat 10 \
   > $1.log 2>&1 &
