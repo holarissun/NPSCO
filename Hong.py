@@ -78,13 +78,13 @@ class ActorCritic_PPO(nn.Module):
     def __init__(self, num_inputs, num_outputs, layer_norm=True):
         super(ActorCritic_PPO, self).__init__()
 
-        self.actor_fc1 = nn.Linear(num_inputs, 32)
-        self.actor_fc2 = nn.Linear(32, config.hid_num)
+        self.actor_fc1 = nn.Linear(num_inputs, 128)
+        self.actor_fc2 = nn.Linear(128, config.hid_num)
         self.actor_fc3 = nn.Linear(config.hid_num, num_outputs)
         self.actor_logstd = nn.Parameter(torch.zeros(1, num_outputs))
-        self.critic_fc1 = nn.Linear(num_inputs, 64)
-        self.critic_fc2 = nn.Linear(64, 64)
-        self.critic_fc3 = nn.Linear(64, 1)
+        self.critic_fc1 = nn.Linear(num_inputs, 128)
+        self.critic_fc2 = nn.Linear(128, 128)
+        self.critic_fc3 = nn.Linear(128, 1)
 
         if layer_norm:
             self.layer_norm(self.actor_fc1, std=1.0)
